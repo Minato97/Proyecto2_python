@@ -46,7 +46,6 @@ class ListaEnlazada:
             index += 1
         return -1
 
-
     def añadir_inicio(self,e):
         nuevo = _Nodo(e, None)
         if self.esta_vacio():
@@ -68,18 +67,18 @@ class ListaEnlazada:
             if p._siguiente == self._final:
                 p._siguiente = None
             p = p._siguiente
-
         self._size -= 1
         
         
 
         
-L =  ListaEnlazada()
+L = ListaEnlazada()
+L = ListaEnlazada()
+L = ListaEnlazada()
+L.añadir_final(1)
 L.añadir_final(2)
-L.añadir_final(4)
-L.añadir_final(12)
-L.añadir_final(8)
 L.añadir_final(3)
+L.añadir_final(4)
 L.mostrar()
 print('Size',len(L))
 
