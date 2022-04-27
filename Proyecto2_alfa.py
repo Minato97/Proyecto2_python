@@ -69,115 +69,70 @@ class ListaEnlazada:
             if p._siguiente == self._final:
                 p._siguiente = None
             p = p._siguiente
-
         self._size -= 1
+
+def movimiento(T1,T2,m):
+    T1.añadir_final(T2._final._elemento)
+    T2.eliminar_final()
+    p = T2._frente
+    while p:
+        if p._siguiente == None:
+            T2._final = p
+        p = p._siguiente
+    print("\nmovimiento ", m)
     
-def movimiento1():
-    C.añadir_final(A._final._elemento)
-    C._size += 1
-    A.eliminar_final()
-    A._size -= 1
-    A._final = A._final
-    print("\nmovimiento 1")
-    print("\nLista A")
-    A.mostrar()
-    print("\nLista B")
-    B.mostrar()
-    print("\nLista C")
-    C.mostrar()
     
-def movimiento2():
-    B.añadir_final(A._final._elemento)
-    B._size += 1
-    A.eliminar_final()
-    A._size -= 1
-    A._final = A._final
-    print("\nmovimiento 2")
-    print("\nLista A")
-    A.mostrar()
-    print("\nLista B")
-    B.mostrar()
-    print("\nLista C")
-    C.mostrar()
 
-def movimiento3():
-    B.añadir_final(C._final._elemento)
-    B._size += 1
-    C.eliminar_final()
-    C._size -= 1
-    C._final = C._final
-    print("\nmovimiento 3")
-    print("\nLista A")
-    A.mostrar()
-    print("\nLista B")
-    B.mostrar()
-    print("\nLista C")
-    C.mostrar()
+def movimiento_x(T1,T2,m):
+    T1.añadir_final(T2._final._elemento)
+    T2.eliminar_inicio()
+    p = T2._frente
+    while p:
+        if p._siguiente == None:
+            T2._final = p
+        p = p._siguiente
+    print("\nmovimiento ", m)
 
-def movimiento4():
-    C.añadir_final(A._final._elemento)
-    C._size += 1
-    A.eliminar_final()
-    A._size -= 1
-    A._final = A._final
-    print("\nmovimiento 4")
-    print("\nLista A")
+def mostrar_todo():
+    print("Lista A")
     A.mostrar()
-    print("\nLista B")
+    print("Lista B")
     B.mostrar()
-    print("\nLista C")
-    C.mostrar()
-
-def movimiento5():
-    A.añadir_final(B._final._elemento)
-    A._size += 1
-    B.eliminar_final()
-    B._size -= 1
-    B._final = B._final
-    print("\nmovimiento 5")
-    print("\nLista A")
-    A.mostrar()
-    print("\nLista B")
-    B.mostrar()
-    print("\nLista C")
-    C.mostrar()
-
-def movimiento6():
-    C.añadir_final(B._final._elemento)
-    C._size += 1
-    B.eliminar_final()
-    B._size -= 1
-    B._final = B._final
-    print("\nmovimiento 6")
-    print("\nLista A")
-    A.mostrar()
-    print("\nLista B")
-    B.mostrar()
-    print("\nLista C")
+    print("Lista C")
     C.mostrar()
     
-def movimiento7():
-    C.añadir_final(A._final._elemento)
-    C._size += 1
-    A.eliminar_final()
-    A._size -= 1
-    A._final = A._final
-    print("\nmovimiento 7")
-    print("\nLista A")
-    A.mostrar()
-    print("\nLista B")
-    B.mostrar()
-    print("\nLista C")
-    C.mostrar()
 
 def proceso():
-    movimiento1()
-    movimiento2()
-    movimiento3()
-    movimiento4()
-    movimiento5()
-    movimiento6()
-    movimiento7()
+    movimiento(C,A,1)
+    mostrar_todo()
+    movimiento(B,A,2)
+    mostrar_todo()
+    movimiento_x(B,C,3)
+    mostrar_todo()
+    movimiento(C,A,4)
+    mostrar_todo()
+    movimiento(A,B,5)
+    mostrar_todo()
+    movimiento_x(C,B,6)
+    mostrar_todo()
+    movimiento(C,A,7)
+    mostrar_todo()
+    movimiento_x(B,A,8)
+    mostrar_todo()
+    movimiento(A,C,9)
+    mostrar_todo()
+    movimiento(B,C,10)
+    mostrar_todo()
+    movimiento_x(B,A,11)
+    mostrar_todo()
+    movimiento_x(A,C,12)
+    mostrar_todo()
+    movimiento(C,B,13)
+    mostrar_todo()
+    movimiento_x(B,A,14)
+    mostrar_todo()
+    movimiento_x(B,C,15)
+    mostrar_todo()
         
 A =  ListaEnlazada()
 B =  ListaEnlazada()
@@ -191,5 +146,5 @@ A.mostrar()
 print('Size',len(A))
 
 proceso()
-C.mostrar()
+
 
