@@ -31,6 +31,8 @@ class ListaEnlazada:
 
     def mostrar(self):
         p = self._frente
+        if self._frente == None:
+            print("La lista esta vacia")
         while p:
             print(p._elemento,end=' --> ')#end, argumento que permite agregar texto al final de una cadena
             p = p._siguiente
