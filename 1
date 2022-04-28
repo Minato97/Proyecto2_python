@@ -1,6 +1,6 @@
 from asyncio.windows_events import NULL
-import time
-from tqdm import tqdm
+
+
 class _Nodo:
     __slots__='_elemento', '_siguiente'
 
@@ -34,7 +34,6 @@ class ListaEnlazada:
         while p:
             print(p._elemento,end=' --> ')#end, argumento que permite agregar texto al final de una cadena
             p = p._siguiente
-            time.sleep(0.5)
         print("\n")
 
     def buscar(self,key):
@@ -81,7 +80,6 @@ def movimiento(T1,T2,m):
         if p._siguiente == None:
             T2._final = p
         p = p._siguiente
-    print("-------------------------------------------------------------------------------------")
     print("\nMovimiento ", m)
     mostrar_todo()
 
@@ -103,14 +101,14 @@ def proceso():
     movimiento(C,B,6)
     movimiento(C,A,7)
     movimiento(B,A,8)
-    movimiento(B,C,9)
-    movimiento(A,C,10)
-    movimiento(A,B,11)
-    movimiento(B,C,12)
-    movimiento(C,A,13)
+    movimiento(A,C,9)
+    movimiento(B,C,10)
+    movimiento(B,A,11)
+    movimiento(A,C,12)
+    movimiento(C,B,13)
     movimiento(B,A,14)
     movimiento(B,C,15)
-        
+
 A =  ListaEnlazada()
 B =  ListaEnlazada()
 C =  ListaEnlazada()
@@ -118,17 +116,9 @@ A.añadir_final(4)
 A.añadir_final(3)
 A.añadir_final(2)
 A.añadir_final(1)
-print("\nCargando programa:")
 
-for i in tqdm(range(200)):
-    time.sleep(0.001)
-
-print("\nEl presente programa resuelve la torre de hanoi con 4 discos y 3 torres usando pilas y listas enlazadas.\n")
-time.sleep(1)
-print("La torre A contiene todos los discos, los cuales son los siguientes:\n")
 A.mostrar()
 print('Size',len(A))
 
 proceso()
-print("\nEl ejercicio se completo en 15 movimientos los 4 discos fueron trasladados de la torre A a la torre B")
 
